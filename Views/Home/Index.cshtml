@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dojodachi</title>
+</head>
+<body>
+    <div class="text-center">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow mb-3" style="background-color: #F3F3F3; margin: 5px;">
+            <div class="container">
+                <h5>Fullness: @TempData["Fullness"]</h5>
+                
+                <h5>Happniess: @TempData["Happiness"]</h5>
+
+                <h5>Meals: @TempData["Meal"]</h5>
+
+                <h5>Energy: @TempData["Energy"]</h5>
+            </div>
+        </nav>
+        <div>
+            <p>@TempData["Message"]</p>
+            <img src="@Url.Content(ViewBag.ImgUrl)" alt="" style="max-height: 40vh; border: 2px solid gray;">
+        </div>
+
+        @{
+            if((string)TempData["GameStatus"] == "Playing")
+            {
+                <div style="margin-top: 10px;">
+                    <a href="feed" class="btn btn-sm btn-success">Feed</a>
+                    <a href="play" class="btn btn-sm btn-warning">Play</a>
+                    <a href="work" class="btn btn-sm btn-danger">Work</a>
+                    <a href="sleep"class="btn btn-sm btn-info">Sleep</a>
+                </div>
+            }
+        }
+    </div>
+</body>
+</html>
